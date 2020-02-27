@@ -1,0 +1,501 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Your first form</h4>
+                  </div>
+                  <div class="card-body">
+                        <mat-horizontal-stepper [linear]="true" #stepper>
+                            <mat-step [stepControl]="firstFormGroup">
+                                <form [formGroup]="firstFormGroup">
+                                <ng-template matStepLabel>Confidence</ng-template>
+                                <label id="example-radio-group-label">Thinking positive thoughts can make your self-esteem better ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="c1"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">Do you speak up in a group of people when you have a good idea, about what to do next ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="c2"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNoSometimes" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">You are likely to try new things ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="c3"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNoSometimes" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">Do you feel confident ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="c4"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNoSometimes" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">Is it important for you that other people like you ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="c5"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNoSometimes" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <div>
+                                    <button mat-raised-button matStepperNext class="btn btn-danger">Next</button>
+                                </div>
+                                </form>
+                            </mat-step>
+                            <mat-step [stepControl]="secondFormGroup">
+                                <form [formGroup]="secondFormGroup">
+                                <ng-template matStepLabel>Communication skills</ng-template>
+                                <label id="example-radio-group-label">Choose your language of survey:</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="cs1"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let language of languages" [value]="language.value">
+                                        {{language.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <div>
+                                    <button mat-raised-button matStepperPrevious class="btn btn-info pull-left">Back</button>
+                                    <button mat-raised-button matStepperNext class="btn btn-danger pull-right">Next</button>
+                                </div>
+                                </form>
+                            </mat-step>
+                            <mat-step [stepControl]="thirdFormGroup">
+                                <form [formGroup]="thirdFormGroup">
+                                <ng-template matStepLabel>Leadership</ng-template>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label id="example-radio-group-label">I set goals for myself and others:</label>
+                                        <div class="row">
+                                            <div class="col-md-2 agreeContainer">
+                                                Agree
+                                            </div>
+                                            <div class="col-md-6">
+                                                <mat-slider
+                                                    class="sliderClass"
+                                                    [max]="100"
+                                                    [min]="0"
+                                                    [step]="20"
+                                                    formControlName="l1"
+                                                >
+                                                </mat-slider>
+                                            </div>
+                                            <div class="col-md-2 disagreeContainer">
+                                                Disagree
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label id="example-radio-group-label">I am good at motivating people:</label>
+                                        <div class="row">
+                                            <div class="col-md-2 agreeContainer">
+                                                Agree
+                                            </div>
+                                            <div class="col-md-6">
+                                                <mat-slider
+                                                    class="sliderClass"
+                                                    [max]="100"
+                                                    [min]="0"
+                                                    [step]="20"
+                                                    formControlName="l2"
+                                                >
+                                                </mat-slider>
+                                            </div>
+                                            <div class="col-md-2 disagreeContainer">
+                                                Disagree
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                            <label id="example-radio-group-label">I can lead a team well:</label>
+                                        <div class="row">
+                                            <div class="col-md-2 agreeContainer">
+                                                Agree
+                                            </div>
+                                            <div class="col-md-6">
+                                                <mat-slider
+                                                    class="sliderClass"
+                                                    [max]="100"
+                                                    [min]="0"
+                                                    [step]="20"
+                                                    formControlName="l3"
+                                                >
+                                                </mat-slider>
+                                            </div>
+                                            <div class="col-md-2 disagreeContainer">
+                                                Disagree
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                            <label id="example-radio-group-label">People come to me for advice:</label>
+                                        <div class="row">
+                                            <div class="col-md-2 agreeContainer">
+                                                Agree
+                                            </div>
+                                            <div class="col-md-6">
+                                                <mat-slider
+                                                    class="sliderClass"
+                                                    [max]="100"
+                                                    [min]="0"
+                                                    [step]="20"
+                                                    formControlName="l4"
+                                                >
+                                                </mat-slider>
+                                            </div>
+                                            <div class="col-md-2 disagreeContainer">
+                                                Disagree
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label id="example-radio-group-label">I am good at convincing others:</label>
+                                        <div class="row">
+                                            <div class="col-md-2 agreeContainer">
+                                                Agree
+                                            </div>
+                                            <div class="col-md-6">
+                                                <mat-slider
+                                                    class="sliderClass"
+                                                    [max]="100"
+                                                    [min]="0"
+                                                    [step]="20"
+                                                    formControlName="l5"
+                                                >
+                                                </mat-slider>
+                                            </div>
+                                            <div class="col-md-2 disagreeContainer">
+                                                Disagree
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button mat-raised-button matStepperPrevious class="btn btn-info pull-left">Back</button>
+                                    <button mat-raised-button matStepperNext class="btn btn-danger pull-right">Next</button>
+                                </div>
+                                </form>
+                            </mat-step>
+                            <mat-step [stepControl]="fourthFormGroup">
+                                <form [formGroup]="fourthFormGroup">
+                                <ng-template matStepLabel>Creativity/Innovation</ng-template>
+                                <label id="example-radio-group-label">Is creativity a good thing ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="cl1"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <mat-form-field class="example-full-width">
+                                    <textarea matInput formControlName="cl2" placeholder="What are some ways that a person can be creative ?"></textarea>
+                                </mat-form-field>
+                                <label id="example-radio-group-label">Is taking a risk part of creativity ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="cl3"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">Do you often ask question the way things work ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="cl4"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">Do you like to improve things ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="cl5"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <div>
+                                    <button mat-raised-button matStepperPrevious class="btn btn-info pull-left">Back</button>
+                                    <button mat-raised-button matStepperNext class="btn btn-danger pull-right">Next</button>
+                                </div>
+                                </form>
+                            </mat-step>
+                            <mat-step [stepControl]="fifthFormGroup">
+                                <form [formGroup]="fifthFormGroup">
+                                <ng-template matStepLabel>Problem solving</ng-template>
+                                <label id="example-radio-group-label">A colleague’s work is deteriorating. After some days, the colleague starts a conversation while you are having a coffee break. The colleague explains some serious personal problems and you listen carefully. What do you do ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="p1"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of p1Answers" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">A business partner needs to send you some documents urgently. You ask him to take photos of the documents on the phone and message them, to get a copy immediately. Your partner is not capable of sending photos via a message. What do you do ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="p2"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of p2Answers" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">Production in your factory is about to be blocked as a component has been delayed. You are responsible for purchasing the component and the plant manager wants a meeting at the end of work, in 3 hours. What do you do ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="p3"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of p3Answers" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">A major client is considering placing an order with you. This is a big deal. What do you do ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="p4"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of p4Answers" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">A regular client has asked you to supply a service which is slightly different from what you normally offer. You have the skills to offer a good service but it is a new service. Business is good but you are not at full capacity. What do you do ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="p5"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of p5Answers" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <div>
+                                    <button mat-raised-button matStepperPrevious class="btn btn-info pull-left">Back</button>
+                                    <button mat-raised-button matStepperNext class="btn btn-danger pull-right">Next</button>
+                                </div>
+                                </form>
+                            </mat-step>
+                            <mat-step [stepControl]="sixthFormGroup">
+                                <form [formGroup]="sixthFormGroup">
+                                <ng-template matStepLabel>Finance</ng-template>
+                                <label id="example-radio-group-label">If you were able to earn interest at 3% and you started with $100, how much would you have after 3 years ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="f1"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of f1Answers" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">The concept of time value of money is that:</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="f2"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of f2Answers" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">Which of the following is not a financing activity ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="f3"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of f3Answers" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">Does carrying a balance on your credit card help your credit ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="f4"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of trueFalse" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">Should you pay down your largest debts first ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="f5"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of trueFalse" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">A 15-year mortgage typically requires higher monthly payments than a 30-year mortgage but the total interest over the life of the loan will be less.</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="f6"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of trueFalse" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <div>
+                                    <button mat-raised-button matStepperPrevious class="btn btn-info pull-left">Back</button>
+                                    <button mat-raised-button matStepperNext class="btn btn-danger pull-right">Next</button>
+                                </div>
+                                </form>
+                            </mat-step>
+                            <mat-step [stepControl]="seventhFormGroup">
+                                <form [formGroup]="seventhFormGroup">
+                                <ng-template matStepLabel>Ambition</ng-template>
+                                <label id="example-radio-group-label">Do you find the idea of shooting for the top exciting and challenging ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="a1"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">Do you sometimes feel you’re not making enough progress ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="a2"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">Are you willing to work some extra weeknights and weekends to get ahead ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="a3"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">Have you set one or more deadlines for reaching your major goals ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="a4"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">Do you often consider and experiment with new plans to help you reach your objectives ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="a5"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of yesNo" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <div>
+                                    <button mat-raised-button matStepperPrevious class="btn btn-info pull-left">Back</button>
+                                    <button mat-raised-button matStepperNext class="btn btn-danger pull-right">Next</button>
+                                </div>
+                                </form>
+                            </mat-step>
+                            <mat-step [stepControl]="eighthFormGroup">
+                                <form [formGroup]="eighthFormGroup">
+                                <ng-template matStepLabel>Risk taking</ng-template>
+                                <label id="example-radio-group-label">When at work, how would you feel if you were asked to perform repetitive tasks for months and months, to a point you do not need to think about the task you are doing ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="r1"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of r1Answers" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">You are in a conference and you believe the people around you are interesting and open to meet others. What do you do ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="r2"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of r2Answers" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">You offer a unique service to local companies, and your internet / social media presence is very effective. A friend tells you a new company has moved into the area that could be a great new customer to you and increase your turnover by 20%! What do you do ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="r3"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of r3Answers" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">You win a big deal! You have been working on it for weeks and it is worth a lot of money! Well done. What do you do ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="r4"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of r4Answers" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <label id="example-radio-group-label">You are the MD in a rich company and a new restaurant has opened in town! From the outside, it looks nice and it is attracting people from your client base. You have not paid for a meal for your staff for a long time. What do you do ?</label>
+                                <mat-radio-group
+                                    class="example-radio-group"
+                                    formControlName="r5"
+                                >
+                                    <mat-radio-button class="example-radio-button" *ngFor="let value of r5Answers" [value]="value.value">
+                                        {{value.viewValue}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <div>
+                                    <button mat-raised-button matStepperPrevious class="btn btn-info pull-left">Back</button>
+                                    <button mat-raised-button matStepperNext class="btn btn-danger pull-right">Next</button>
+                                </div>
+                                </form>
+                            </mat-step>
+                            <mat-step>
+                                <ng-template matStepLabel>Finish</ng-template>
+                                    <h2>Congratulations, you have completed the form</h2>
+                                <div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <button mat-raised-button (click)="saveFormData()" class="btn btn-danger">Save your progress</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <button mat-raised-button (click)="stepper.reset()" class="btn btn-primary">Reset the form</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </mat-step>
+                        </mat-horizontal-stepper>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

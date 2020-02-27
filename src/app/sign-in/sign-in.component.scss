@@ -1,0 +1,36 @@
+.page-header {
+    background-color: #b2afab;
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
+    max-height: 999px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-register {
+    padding: 30px;
+
+    .title {
+        color: #f44336;
+        text-align: center;
+    }
+}
+
+.btn-just-icon {
+    border-radius: 50px;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    padding: 8px;
+    background-color: #f44336;
+
+    i {
+        color: #ffffff;
+    }
+}
